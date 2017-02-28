@@ -26,13 +26,13 @@ func checkDevicesEqual(dev accessors.Device, name string, room string, building 
 		strings.EqualFold(dev.Building.Shortname, building)
 }
 
-func CheckCommands(commands []accessors.Command, commandName string) (bool, accessors.Command) {
+func CheckCommands(commands []accessors.DeviceCommand, commandName string) (bool, accessors.DeviceCommand) {
 	for _, c := range commands {
 		if strings.EqualFold(c.Name, commandName) {
 			return true, c
 		}
 	}
-	return false, accessors.Command{}
+	return false, accessors.DeviceCommand{}
 }
 
 func markAsOverridden(action base.ActionStructure, structs ...[]*base.ActionStructure) {
